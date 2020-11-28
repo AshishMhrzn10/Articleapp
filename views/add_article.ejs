@@ -3,21 +3,19 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="assets/todo-list.js"></script>
-        <title>Knowledge Base</title>
-        <link href="/assets/styles.css" rel="stylesheet" type="text/css">
+        <title>Add Article</title>
 </head>
 <body>
     <h1>My Articles List</h1>
     <div id="todo-table">
-        <form>
+        <form method="POST" action="/articles/add">
             <input type="text" name="title" placeholder="Add an title" required>
             <input type="text" name="author" placeholder="Add an author" required>
             <input type="textarea" name="body" placeholder="Describe" required>
             <button type="submit">Add Article</button>
         </form>
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="/js/main.js"></script>
 </body>
 </html>

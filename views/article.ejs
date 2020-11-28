@@ -3,11 +3,15 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Knowledge Base</title>
+        <title>Article</title>
 </head>
 <body>
     <h1><%= article.title %></h1>
     <h3><%= article.author %></h1>
     <h3><%= article.body %></h1>
+    <a href="/article/edit/<%= article._id %>"><button style="font-size: 30px;">Edit</button></a>
+    <a href="#"><button style="font-size: 30px;" class="delete-article" data-id="<%= article._id %>">Delete</button></a>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="/js/main.js"></script>
 </body>
 </html>
