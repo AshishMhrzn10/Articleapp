@@ -24,13 +24,16 @@ let Article = require("./models/article");
 
 //Load view engine
 app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "pug");
+app.set("view engine", "ejs");
 
 //body-parser middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // parse application/json
 app.use(bodyParser.json());
+
+//Set Public Folder
+app.use(express.static(path.join(__dirname, "public")));
 
 //Home route
 app.get("/", function (req, res) {
@@ -67,6 +70,15 @@ app.post("/articles/add", function (req, res) {
 		} else {
 			res.redirect("/");
 		}
+	});
+});
+
+//Get single article
+app.get("/article/:id", function (req, res) {
+	Article.findById(req.params.id, function (err, article) {
+		res.render("article", {
+			article: article,
+		});
 	});
 });
 
